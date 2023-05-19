@@ -36,7 +36,7 @@ def get_user_choice(ordered_list=[], menu_list=[]):
 def tell_listen(title='', ordered_list=[], menu_list=[], message='', tell=True, show_ordered_list=True):
   """combines menu and get_user_choice into one function. Returns the user choice"""
   if tell:
-    menu(title, ordered_list, menu_list, show_ordered_list)
+    menu(title, ordered_list, menu_list, show_ordered_list) # type: ignore
   if message:
     print(message)
   return get_user_choice(ordered_list, menu_list)
@@ -54,7 +54,6 @@ def write_file(file_name, data):
 
 def set_date(lesson):
   """takes a lesson and sets 'date_visited' to string of the current date."""
-  view_date = dt.date.today()
+  view_date = dt.datetime.today()
   view_date_str = view_date.strftime('%Y-%m-%d')
   lesson[0] = view_date_str
-  

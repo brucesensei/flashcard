@@ -1,5 +1,5 @@
-import helpers
 import random
+import helpers
 import index_gen
 import questions
 import display
@@ -23,19 +23,21 @@ def learn_lesson(vocab, kind='p'):
     random.shuffle(vi)
     qi = [3 for i in range(len(vocab))]
   
-  for i in range(len(vi)):
-    vocab_index = vi[i]
-    question_index = qi[i]
+  for i in range(len(vi)): # type: ignore
+    vocab_index = vi[i] # type: ignore
+    question_index = qi[i] # type: ignore
     if question_index == 0:
-      display.training_word_display(vocab=vocab, index=vocab_index)
+      display.training_word_display(vocab=vocab, index=vocab_index) # type: ignore
     if question_index == 1:
-      questions.multiple_choice(word_list=spanish_list, vocab=vocab, index=vocab_index, word_1='target', word_2='native')
+      questions.multiple_choice(word_list=spanish_list, vocab=vocab, 
+        index=vocab_index, word_1='target', word_2='native') # type: ignore
     if question_index == 2:
-      questions.multiple_choice(word_list=english_list, vocab=vocab, index=vocab_index, word_1='native', word_2='target')  
+      questions.multiple_choice(word_list=english_list, vocab=vocab, 
+        index=vocab_index, word_1='native', word_2='target')  # type: ignore
     if question_index == 3: # type english word
-      questions.type_word(vocab=vocab, index=vocab_index, word_1='target', word_2='native')
+      questions.type_word(vocab=vocab, index=vocab_index, word_1='target', word_2='native') # type: ignore
     if question_index == 4: # type spanish word
-      questions.type_word(vocab=vocab, index=vocab_index, word_1='native', word_2='target')
+      questions.type_word(vocab=vocab, index=vocab_index, word_1='native', word_2='target') # type: ignore
 
 def learn_main(unit, lesson_choice):
   lesson = display.get_lesson(unit, lesson_choice)
@@ -64,3 +66,4 @@ def learn_main(unit, lesson_choice):
   lesson = display.display_lesson(lesson, marker='difficult')
   unit[lesson_choice] = lesson
   helpers.write_file('lesson_data.json', unit) 
+ 

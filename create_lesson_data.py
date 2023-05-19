@@ -49,7 +49,7 @@ def create_unit(target, native):
   for i in range(len(target)):
     title = 'Lesson ' + str(i) 
     lesson = lesson_generator(target[i], native[i])
-    lesson.append(title)
+    lesson.append(title) # type: ignore
     unit.append(lesson)
   return unit
 

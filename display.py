@@ -1,4 +1,3 @@
-
 import helpers
 
 def get_vocab(lesson):
@@ -8,7 +7,9 @@ def get_vocab(lesson):
 def display_lessons(unit):
   """Takes the unit list. Displays the lesson index and the lesson title. Returns nothing"""
   for i in range(len(unit)):
-    if 'date_visited' != unit[i][0]:
+    if len(unit[i][1]) == 1:
+      message = 'Completed'
+    elif 'date_visited' != unit[i][0]:
       message = 'Learning'
     else:
       message = ''
@@ -99,7 +100,7 @@ def display_lesson(lesson, marker=''):
   print(title.upper())
   print("=" * len(title),"\n")
   for i in range(len(vocab)):
-    display_word(vocab, index=i)
+    display_word(vocab, index=i) # type: ignore
   if marker == 'known':
     lesson = toggle_known(vocab, lesson)
     return lesson

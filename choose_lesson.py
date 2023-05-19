@@ -11,9 +11,10 @@ def choose_main():
     display.display_lessons(unit)
     known_words = track_lessons.get_known_word_count(unit)
     difficult =  track_lessons.get_difficult_words(unit)
+    review = track_lessons.units_for_review(unit)
     print(f'\nKnown Words: ({known_words})')
     menu_options = [
-      ['p', f'Lessons for Review:   ({track_lessons.units_for_review()})'],
+      ['p', f'Lessons for Review:   ({len(review)})'], # type: ignore
       ['d', f'Difficult Words       ({len(difficult)})'],
       ['r', 'Return to the main menu'],
       ]
@@ -29,7 +30,10 @@ def choose_main():
       difficult_words.difficult_main(unit, difficult)
       continue
     if user_choice == 'p':
-      practice_lesson.practice_main(unit)
+      if len(review) == 0: # type: ignore
+        print('You do not have any lessons to review.')
+        continue
+      practice_lesson.practice_main(unit, review)
       continue
     if user_choice == 'r':
-      break  
+      break   

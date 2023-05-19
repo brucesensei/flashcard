@@ -16,7 +16,7 @@ choices = {'l': choose_lesson.choose_main,
            'd': "delete_native.mian",
            'q': quit_app,
            }
- 
+  
 def main():
   while True:
     main_options = [
@@ -28,8 +28,8 @@ def main():
       ['d', 'Delete a lesson'],
       ['q', 'Quit']]
     user_choice = helpers.tell_listen(title='main menu', menu_list=main_options)
-    option = choices.get(user_choice)
-    option()
+    option = choices.get(user_choice) # type: ignore
+    option() # type: ignore
 
 if __name__ == '__main__':
   main()
