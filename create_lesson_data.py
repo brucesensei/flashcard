@@ -64,8 +64,5 @@ def create_lesson_data():
   unit = create_unit(spanish_lessons, english_lessons)
   # write the data to file
   helpers.write_file('lesson_data.json', unit)
-  # read the data to make sure everything is working
-  lesson_data = helpers.read_file('lesson_data.json')
-  return lesson_data
+  print('All learning tracking has been reset.')
 
-# create_lesson_data()
