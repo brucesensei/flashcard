@@ -65,4 +65,3 @@ def create_lesson_data():
   # write the data to file
   helpers.write_file('lesson_data.json', unit)
   print('All learning tracking has been reset.')
-

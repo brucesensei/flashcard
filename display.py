@@ -7,6 +7,7 @@ def get_vocab(lesson):
 def display_lessons(unit):
   """Takes the unit list. Displays the lesson index and the lesson title. Returns nothing"""
   for i in range(len(unit)):
+    # this is the index of the list of numbers determining review day spacing
     if len(unit[i][1]) == 1:
       message = 'Completed'
     elif 'date_visited' != unit[i][0]:
@@ -37,8 +38,7 @@ def toggle_known(vocab, lesson):
       display_lesson(lesson)
     else:
       return lesson
-
-  
+ 
 def toggle_difficult(vocab, lesson):
   """Takes a lesson to pass to display_lesson. Takes vocab and allows the user to mark
   the vocabulary word as either difficult or not by toggling the 'difficult' key. displays the

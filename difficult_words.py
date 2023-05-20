@@ -4,6 +4,8 @@ import display
 
 
 def split_list(array, length):
+  """Splits a list of vocab dictionaries into shorter lists. takes an array and list
+  length and returns a list of lists containing vocab dictionaries"""
   split_lists = []
   if len(array) <= length:
     split_lists.append(array)
@@ -17,6 +19,8 @@ def split_list(array, length):
   return split_lists
 
 def update_unit(difficult_list, unit):
+  """matches the difficult vocabulary to the unit vocabulary on the vocab id and
+  updates them."""
   for update in difficult_list:
     for lesson in unit:              
       for i in range(len(lesson)):
@@ -24,7 +28,6 @@ def update_unit(difficult_list, unit):
           if lesson[i]['id'] == update["id"]:
             lesson[i] = update
   return unit
-
 
 def difficult_main(unit, difficult):
   # displays a list of the created lessons
