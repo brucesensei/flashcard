@@ -20,7 +20,6 @@ def practice_main(unit, review):
   helpers.set_date(review_lesson)
   review_lesson = display.display_lesson(review_lesson, marker='known')
   review_lesson = display.display_lesson(review_lesson, marker='difficult')
-  pause = input('you have made it this far without fucking up.')
   review_lesson = advance_learning_date(review_lesson)
   # match lesson on title and replace updated lesson with old lesson
   for i in range(len(unit)):
