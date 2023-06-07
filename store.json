@@ -1,0 +1,56 @@
+[
+  [
+    "2023-06-07",
+    [
+      21,
+      14,
+      7,
+      3,
+      1
+    ],
+    {
+      "id": "62b0387e-425e-40f7-bc1a-c44f5dd3bc72",
+      "target": "uno",
+      "native": "one",
+      "known": false,
+      "difficult": false
+    },
+    {
+      "id": "bef75302-248c-48b8-a8de-228303a444fe",
+      "target": "dos",
+      "native": "two",
+      "known": false,
+      "difficult": false
+    },
+    {
+      "id": "f011e50b-9a60-420c-b2f3-9a4e56a97f25",
+      "target": "te quiero",
+      "native": "I love you",
+      "known": false,
+      "difficult": false
+    },
+    "love"
+  ],
+  [
+    "2023-05-31",
+    [
+      21,
+      14
+    ],
+    {
+      "id": "1",
+      "target": "test",
+      "native": "test",
+      "known": false,
+      "difficult": false
+    },
+    {
+      "id": "2",
+      "target": "test",
+      "native": "test",
+      "known": false,
+      "difficult": false
+    },
+    "test"
+  ]
+]

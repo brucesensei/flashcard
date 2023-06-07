@@ -1,6 +1,19 @@
 import helpers
 import uuid
 
+message = '''
+=======================================================
+|                                                     |
+| \    /\    /  /\   |``\  |\  |  ``|`` |\  |  /``\   |
+|  \  /  \  /  /__\  |../  | \ |    |   | \ | |   --- |
+|   \/    \/  /    \ | \   |  \|  ..|.. |  \|  \../   |
+=======================================================
+
+Resetting the module will erase any recorded progress
+and delete any lessons you have added. If you are sure
+you want to proceed enter 'y' (yes). Otherwise press
+any other key to return to the main menu.
+'''
 def divide_list(long_list, lesson_length):
   """splits one long list of single words into many smaller lists determined by lensson_lenght
   words each passed to the function with lesson_length."""
@@ -30,7 +43,7 @@ def lesson_generator(target, native):
   if len(native) != len(target):
     print('the language lists are not the same length. please check your data and try again.')
     return
-  
+   
   for i in range(len(native)):
     id = uuid.uuid4()
     id = str(id)
@@ -52,11 +65,11 @@ def create_unit(target, native):
     lesson.append(title) # type: ignore
     unit.append(lesson)
   return unit
-
+ 
 def create_lesson_data():
   # get the master english and spanish word lists
-  spanish_words = helpers.read_file('spanish_list.json')
-  english_words = helpers.read_file('english_list.json')  
+  spanish_words = helpers.read_file('orriginal_spanish_list.json')
+  english_words = helpers.read_file('orriginal_english_list.json')  
   # divide the word list into a list of 10-word lessons
   english_lessons = divide_list(english_words, 10)
   spanish_lessons = divide_list(spanish_words, 10)
@@ -64,4 +77,9 @@ def create_lesson_data():
   unit = create_unit(spanish_lessons, english_lessons)
   # write the data to file
   helpers.write_file('lesson_data.json', unit)
-  print('All learning tracking has been reset.')
+  print('All learning tracking has been reset and any added lessons have been lost.')
+
+def confirm_reset():  
+  answer = input(message)
+  if answer == 'y':
+    create_lesson_data()

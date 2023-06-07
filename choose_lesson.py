@@ -26,7 +26,12 @@ def choose_main():
       ]
     message = 'To learn a new lesson (enter a lesson number)'
     # get the user choice and handle routing.
-    user_choice = helpers.tell_listen(title='lesson menu', ordered_list=unit, menu_list=menu_options, message=message, show_ordered_list=False)
+    user_choice = helpers.tell_listen(title='lesson menu',
+      ordered_list=unit,
+      menu_list=menu_options,
+      message=message,
+      show_ordered_list=False
+      )
     if type(user_choice) == int:
       learn_lesson.learn_main(unit, user_choice)
       continue
