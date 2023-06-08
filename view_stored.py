@@ -7,6 +7,9 @@ unit = helpers.read_file('lesson_data.json')
 
 
 def view_stored_main():
+  """Takes no arguments. moves a selected lesson from store.json to lesson_data.json
+  or deletes a lesson. values stored in the english and spanish list remain
+  after a lesson has been deleted."""
   while True:
     display.display_lessons(stored)
     option_list = [['g', 'Go back to the main menu'],

@@ -7,7 +7,7 @@ def multiple_choice(word_list='', vocab='', index='', word_1='', word_2=''):
   for word_1 and _word to to access the target or native vocabulary on the word. Returns nothing"""
   key_word = vocab[index][word_1] # type: ignore
   quiz_word = vocab[index][word_2] # type: ignore
-  multiple_choices = random.choices(word_list, k=3)
+  multiple_choices = random.choices(word_list, k=3) # see docs for random.choices
   multiple_choices.append(key_word)
   random.shuffle(multiple_choices)
   print(f'The meaning of: {quiz_word}')

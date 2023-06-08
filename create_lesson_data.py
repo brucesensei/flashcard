@@ -58,6 +58,9 @@ def lesson_generator(target, native):
   return lesson
 
 def create_unit(target, native):
+  """Takes target and native lists as inputs and passes the list items
+  to lesson_generator. appends the output to a lesson and generates
+  a title and appends it to the lesson. returns the lesson as a list."""
   unit = []
   for i in range(len(target)):
     title = 'Lesson ' + str(i) 
@@ -79,7 +82,8 @@ def create_lesson_data():
   helpers.write_file('lesson_data.json', unit)
   print('All learning tracking has been reset and any added lessons have been lost.')
 
-def confirm_reset():  
+def confirm_reset():
+  """Confirms if the user really wants to reset the lesson before allowing reset.""" 
   answer = input(message)
   if answer == 'y':
     create_lesson_data()

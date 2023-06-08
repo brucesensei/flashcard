@@ -2,7 +2,8 @@ import datetime as dt
 import display
 
 def get_difficult_words(unit):
-  """Returns a list of all words marked as difficult."""
+  """Takes the learning lists
+  Returns a list of all words marked as difficult."""
   difficult_words = []
   for lesson in unit:
     vocab = display.get_vocab(lesson)
